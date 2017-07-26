@@ -104,7 +104,7 @@ body {
 ===============================================
 */
 .image-bg {
-	background-image: url(../img/background-image.png);
+	background-image: url(../img/background-image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 100%;
@@ -452,6 +452,7 @@ footer p em {
 
   .responsive-logo img {
     max-width: 100%;
+	  margin-top: 65px;
   }
 
   .home-container {
