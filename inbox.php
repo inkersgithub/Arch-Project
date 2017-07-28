@@ -1,4 +1,6 @@
-
+<?php
+include_once 'dbconnect.php';
+?>
 <!DOCTYPE html>
 <!-- saved from url=(0048)https://s.codepen.io/sathishlxg/fullpage/qEyMxj? -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -1429,9 +1431,13 @@ pull-right {
           <button><i class="fa fa-check fa-lg"></i></button>
         </div>
       </div>
+      <?php
+      $res=mysqli_query($con,"SELECT * FROM inbox");
+      while($row=mysqli_fetch_array($res)){
+      ?>
       <div class="mail-wrapper" style="display: none;">
         <div class="mail-top shadow">
-          <div class="mail-subject">FW:Jobs to Apply for</div>
+          <div class="mail-subject"><?php echo $row['name']; ?></div>
           <div class="mail-action"></div>
         </div>
         <div class="mail-body ">
@@ -1440,12 +1446,11 @@ pull-right {
           </div>
           <div class="someClass">
             <div class="sender">
-              <sapn>Kennedy</sapn>
-              <span> to me </span>
+              <sapn><?php echo "Phone:".$row['phone']; ?><br></sapn>
+              <sapn><?php echo "E-mail:".$row['email']; ?></sapn>
             </div>
             <div class="message">
-              The only thing I can think to do is trigger an event when the window resizes and dynamically set a new fixed width on text-div, but this just feels inelegant, especially considering padding and other neighboring artifacts I'd have to subtract out to get
-              a proper width.
+              <?php echo $row['message']; ?>
             </div>
           </div>
         </div>
@@ -1453,21 +1458,14 @@ pull-right {
           <div class="image">
             <img src="./avatar_tile_s_56.png">
           </div>
-          <div class="replybox">
-            <div class="draft"><span>Draft </span><span>to, Kennedy <i class="fa fa-angle-down"></i></span></div>
-            <textarea></textarea>
-            <div class="left">
-              <a rel="nofollow" href="https://s.codepen.io/sathishlxg/fullpage/qEyMxj?#" class="send-btn">SEND</a>
-              <a rel="nofollow" href="https://s.codepen.io/sathishlxg/fullpage/qEyMxj?#"><i class="fa fa-paperclip"></i></a>
-            </div>
-          </div>
+
         </div>
       </div>
       <div class="content-wrapper" style="display: block;">
         <div class="image">
           <img src="./avatar_tile_k_56.png">
         </div>
-        <div class="name"><span>Kennedy</span></div>
+        <div class="name"><span><?php echo $row['name']; ?></span></div>
         <div class="subject">
           <div class="actions">
             <a rel="nofollow" href="https://s.codepen.io/sathishlxg/fullpage/qEyMxj?#" class="pinned-msg"><i class="fa fa-thumb-tack"></i></a>
@@ -1479,10 +1477,11 @@ pull-right {
             </ul>
           </div>
           <div class="content">
-            <span class="fs">FW: Jobs to Apply for</span>
+            <span class="fs"><?php echo "Phone:".$row['phone']; ?></span>
           </div>
         </div>
       </div>
+      <?php } ?>
     </article>
 
   </section>
