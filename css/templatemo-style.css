@@ -129,7 +129,7 @@ body {
  }
 
  .home-container .left-content {
-    padding-top: 25%;
+    padding-top: 16%;
     padding-left: 35px;
  }
 
@@ -144,7 +144,7 @@ body {
  .home-container .left-content h2 {
     font-size: 32px;
     letter-spacing: 0.5px;
-    color: #121212;
+    color: #f78b26;
     text-transform: uppercase;
     margin: 0px;
     font-weight: 900;
@@ -357,12 +357,12 @@ body {
 }
 
 .contact-form textarea {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   padding-left: 15px;
   width: 100%;
   max-width: 100%;
   max-height: 180px;
-  height: 140px;
+  height: 110px;
   display: inline-block;
   line-height: 40px;
   font-size: 13px;
@@ -381,7 +381,7 @@ body {
   color: #121212;
   border: 1px solid #343434;
   background-color: transparent;
-  padding: 11px 14px;
+  padding: 11px 60px;
   outline: none;
   margin-bottom: 30px;
   border-radius: 0;
@@ -414,13 +414,13 @@ body {
 */
 
 footer {
-  background-color: #f4f4f4;
+      background-color: #000000;
   text-align: center;
 }
 
 footer p {
   font-size: 13px;
-  color: #7a7a7a;
+  color: #ffffff;
   padding: 20px 0px 15px 0px;
   margin: 0px;
 }
