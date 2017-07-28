@@ -15,15 +15,15 @@ if(isset($_POST['send'])){
 
     $headers = "From:" . $from;
     $headers2 = "From:" . $to;
-    
+
 	mysqli_query($con, "INSERT INTO inbox(name,email,phone,message) VALUES('" . $first_name . "', '" . $from . "', '" . $mobile . "', '" . $temp . "')");
-	
+
 	mail($to,$subject,$message,$headers);
    // mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
     $smsg= "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
-	
+
     // You can also use header('Location: thank_you.php'); to redirect to another page.
-	
+
     }
 
 ?>
@@ -37,7 +37,7 @@ if(isset($_POST['send'])){
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Prominence</title>
 
-		
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -96,7 +96,7 @@ if(isset($_POST['send'])){
 
                   <div class="home-container">
                     <div class="row">
-                      <div class="col-md-6">	
+                      <div class="col-md-6">
                         <div class="left-content">
 						  <h2 style="text-align: center;">PROMINENCE<em></em></h2>
 							<p style="font-size: 15px; color: #343434;font-style: normal; font-weight: bolder; text-align: -webkit-center;">Welcome to PROMINENCE DESIGN AND CONSULTANCY, for modern, Economic and
@@ -208,7 +208,7 @@ if(isset($_POST['send'])){
                         </div>
                       </div>
                     </div>
-                    
+
                     <div>
                       <div class="project-item">
                         <div class="thumb-holder">
@@ -287,7 +287,7 @@ if(isset($_POST['send'])){
                           <div class="heading">
                             <h2>Say Hello</h2>
                           </div>
-                          <form id="contact" action="<?php echo "http://arch.noads.biz/index.php#contact"; ?>" method="post">
+                          <form id="contact" action="#" method="post">
                             <fieldset>
                               <input name="contactName" type="text" class="form-control" id="name" placeholder="Your Name" required="">
                             </fieldset>
@@ -311,7 +311,7 @@ if(isset($_POST['send'])){
                           <p style="font-weight: bolder;text-align: -webkit-center;font-size:15px;color: #343434;">Please contact us for any general questions or more information regarding our services.For more efficient communication, please complete and submit the form</p>
 						  <p style="font-weight: bolder;font-size: 15px;color: #343434;">
 							MAIL : <br><a href="mailto:prominencedesign15@gmail.com">prominencedesign15@gmail.com</a><br>
-							PHONE : <br><a href="tel:9495717528">9495717528</a>  
+							PHONE : <br><a href="tel:9495717528">9495717528</a>
 						  </p>
                         </div>
                       </div>
