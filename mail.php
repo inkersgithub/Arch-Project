@@ -1,3 +1,6 @@
+<?php
+include_once 'dbconnect.php';
+?>
 <!DOCTYPE html>
 <html>
 <title>W3.CSS</title>
@@ -47,30 +50,27 @@ div.panel {
 </style>
 
 <div class="w3-container" style="padding: 0.03em 2px;">
-  
+
 
   <div class="w3-bar w3-black">
-    <button class="w3-bar-item w3-button tablink w3-red" style="padding-bottom: 14px;" onclick="openCity(event,'London')">Inbox</button>
-    <button class="w3-bar-item w3-button tablink" style="padding-bottom: 14px;" onclick="openCity(event,'Paris')">Archive</button>
+    <button class="w3-bar-item w3-button tablink w3-red" style="padding-bottom: 14px;" onclick="openCity(event,'London')">Prominence Mailbox</button>
 <!--    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Tokyo</button>-->
   </div>
-  
+  <?php
+  $res=mysqli_query($con,"SELECT * FROM inbox");
+  ?>
   <div id="London" class="w3-container w3-border city" style="padding: 0.01em 0px;margin-top: -1px;border: 0px solid rgba(255, 255, 255, 0)!important;">
-
-    <button class="accordion">Section 1</button>
+    <?php
+    while($row=mysqli_fetch_array($res)){
+    ?>
+    <button class="accordion"><?php echo $row['name']." | ".$row['date']; ?></button>
 	  <div class="panel">
-  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p><?php  ?><p>
+      <p><?php echo "E-mail:".$row['email']." |  Phone:".$row['phone'];?><br><?php echo "Message:"; ?><br><?php echo $row['message']; ?>.</p>
 	  </div>
-    <button class="accordion">Section 1</button>
-	  <div class="panel">
-  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	  </div>
+    <?php } ?>
  </div>
 
-  <div id="Paris" class="w3-container w3-border city" style="display:none">
-    <h2>Paris</h2>
-    <p>Paris is the capital of France.</p> 
-  </div>
 
 <!--
   <div id="Tokyo" class="w3-container w3-border city" style="display:none">
@@ -105,7 +105,7 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = null;
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
+    }
   }
 }
 
